@@ -2,6 +2,9 @@ import { Context } from "hono";
 import { createUser, deleteUser, findByEmail } from "../repo/user.repo";
 import { extractUser } from "../utils/extractUser";
 import { generateTokens } from "../utils/token";
+export const controllerTest = async (c: Context) => {
+    return c.json("Controller is fine")
+}
 export const GoogleAuth = async (c: Context) => {
     try {
         const { idToken } = await c.req.json()
